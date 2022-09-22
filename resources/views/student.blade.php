@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <title>Student management system</title>
 </head>
+<script>
+    function.resetForm(){
+        document.getElementById('myform').reset();
+    }
+</script>
 <body>
 @include("navbar")
 
@@ -44,7 +49,7 @@
                     <img src="https://marketplace.canva.com/MAB7yqsko0c/1/screen_2x/canva-smart-little-schoolgirl--MAB7yqsko0c.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Enter the informations of the new student</h5>
-                        <form action="{{ url('/store') }}" method="post">
+                        <form action="{{ url('/store') }}" method="post" id='myform'>
                             @csrf
                             <div class="form-group">
                                 <label>CNE</label>
@@ -70,7 +75,7 @@
                                 <input name="speciality" type="text" class="form-control"  placeholder="Enter Sepeciality">
                             </div>
                             <input type="submit" class="btn btn-info" value="Save">
-                            <input type="reset" class="btn btn-warning" value="Reset">
+                            <input type="reset" onclick="resetForm();" class="btn btn-warning" value="Reset">
 
                         </form>
                     </div>
@@ -100,7 +105,7 @@
                     <img src="https://marketplace.canva.com/MAB7yqsko0c/1/screen_2x/canva-smart-little-schoolgirl--MAB7yqsko0c.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Update informations of student</h5>
-                        <form action="{{ url('/update/'.$student1->id) }}" method="post">
+                        <form action="{{ url('/update/'.$student1->id) }}" method="post" id='myform'>
                             @csrf
                             <div class="form-group">
                                 <label>CNE</label>
