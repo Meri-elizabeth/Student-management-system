@@ -27,6 +27,7 @@
                     <td>
 
                         <a href="{{ url('/edit/'.$student1->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="{{ url('/delete/'.$student1->id) }}" class="btn btn-sm btn-warning">Delete</a>
 
                     </td>
 

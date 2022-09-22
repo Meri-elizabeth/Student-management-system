@@ -101,7 +101,7 @@ class Student1Controller extends Controller
         public function destroy($id)
         {
             $student1s = Student1::find($id);
-            $student1s->delete();
+            $student1s->delete('delete from student where id = ?',[$id]);
             return redirect('/');
         }
     }
