@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student1;
 use Illuminate\Http\Request;
+use App\Http\Resources\StudentResource as StudentResource;
 
 class Student1Controller extends Controller
 {
@@ -12,6 +13,11 @@ class Student1Controller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+        public function getstudent1s()
+        {
+            $student1s = Student1::get();
+            return StudentResource::collection($student1s);
+        }
         public function index()
         {
             $student1s = Student1::all();

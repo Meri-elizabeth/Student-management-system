@@ -18,4 +18,5 @@ use App\Http\Controllers\Student1Controller;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::apiResource('/Student',Student1Controller::class)-> middleware('auth.api');
+
+Route::get('getstudent1s',[Student1Controller::class, 'getstudent1s']);
