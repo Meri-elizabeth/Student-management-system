@@ -7,19 +7,18 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset("../css/style.css") }}"/>
+
     <title>Student management system</title>
 </head>
 <script>
-    function.resetForm(){
+    function.resetForm() {
         document.getElementById('myform').reset();
     }
 </script>
 <body>
 @include("navbar")
-
-
-
+@include("footer")
 
 <div class="row header-container justify-content-center">
     <div class="header">
@@ -46,7 +45,7 @@
             <section class="col-md-5">
 
                 <div class="card mb-3">
-                    <img src="https://marketplace.canva.com/MAB7yqsko0c/1/screen_2x/canva-smart-little-schoolgirl--MAB7yqsko0c.jpg" class="card-img-top" alt="...">
+                    <img src="https://www.vidyalayaschoolsoftware.com/assets/images/school_software_1.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Enter the informations of the new student</h5>
                         <form action="{{ url('/store') }}" method="post" id='myform'>
@@ -102,7 +101,7 @@
             <section class="col-md-5">
 
                 <div class="card mb-3">
-                    <img src="https://marketplace.canva.com/MAB7yqsko0c/1/screen_2x/canva-smart-little-schoolgirl--MAB7yqsko0c.jpg" class="card-img-top" alt="...">
+                    <img src="https://www.vidyalayaschoolsoftware.com/assets/images/school_software_1.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Update informations of student</h5>
                         <form action="{{ url('/update/'.$student1->id) }}" method="post" id='myform'>
